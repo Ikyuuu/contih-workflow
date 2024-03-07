@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .faq-container .title {
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .wreper {
+        background-color: blue;
+        color: white;
+        padding: 8px;
+        width: 100%;
+      }
+      .wreper .answer-wreper {
+        padding: 8px;
+      }
+      .hidden {
+        display: none;
+      }
+
+      /* anjay */
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      .faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      details.wreper p {
+        opacity: 0%;
+        /* transform: translateY(-100%); */
+        transition: all 2s ease-in-out;
+      }
+
+      details.wreper[open] p {
+        /* transform: translateY(0); */
+        opacity: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="faq-container">
+      <h1 class="title">FAQ</h1>
+      <details class="wreper">
+        <summary>apakah himakom itu ukm?</summary>
+        <!-- <div class="answer-wreper hidden"> -->
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
+          voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
+          culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
+          Illo, alias.
+        </p>
+      </details>
+      <details class="wreper">
+        <summary>apakah himakom itu ukm?</summary>
+        <!-- <div class="answer-wreper hidden"> -->
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
+          voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
+          culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
+          Illo, alias.
+        </p>
+      </details>
+      <details class="wreper">
+        <summary>apakah himakom itu ukm?</summary>
+        <!-- <div class="answer-wreper hidden"> -->
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
+          voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
+          culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
+          Illo, alias.
+        </p>
+      </details>
+      <details class="wreper">
+        <summary>apakah himakom itu ukm?</summary>
+        <!-- <div class="answer-wreper hidden"> -->
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
+          voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
+          culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
+          Illo, alias.
+        </p>
+      </details>
+    </section>
+    <script>
+      // const details = document.querySelectorAll('details')
+
+      //     details.forEach(detail =>{
+      //     detail.addEventListener('toggle', () => {
+      //         if (detail.hasAttribute('open')) {
+      //             detail.querySelector('summary').textContent += ' ';
+      //         }else {
+      //             detail.querySelector('summary').textContent = detail.querySelector ('summary').textContent.replace('',' ')
+      //         }
+      //     })
+      // })
+
+      // const click =
+      // const wrapper = document.getElementById("#btn")
+      // const answerWreper = document.getElementsByClassName(".answer-wreper")
+
+      // wrapper.onClick = function(event){
+      //     event.preventDefault()
+      //     answerWreper.classList.toggle("hidden")
+      // }
+      // console.log(answerWreper)
+    </script>
+  </body>
+</html>
