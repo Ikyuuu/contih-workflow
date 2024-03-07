@@ -3,61 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FAQ</title>
     <style>
       .faq-container .title {
         text-align: center;
       }
 
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
       .wreper {
-        background-color: blue;
-        color: white;
-        padding: 8px;
-        width: 100%;
-      }
-      .wreper .answer-wreper {
-        padding: 8px;
-      }
-      .hidden {
-        display: none;
+        background-color: rgb(106, 106, 197);
+        color: rgb(0, 0, 0);
+        padding: 10px;
+    
       }
 
-      /* anjay */
+      summary {
+        cursor: pointer;
+      }
+
+      details[open] summary {
+        opacity: 1;
+        font-weight: bold;
+        max-height: 9999px;
+      }
+
       body {
         font-family: sans-serif;
         margin: 0;
         padding: 20px;
+      }
+
+      .answer {
+        opacity: 0;
+        transition: opencity 0.5s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      
+      details[open] .answer {
+        opacity: 1;
+        max-height: 9999px;
+        
       }
       .faq-container {
         display: flex;
         flex-direction: column;
         gap: 10px;
       }
-      details.wreper p {
-        opacity: 0%;
-        /* transform: translateY(-100%); */
-        transition: all 2s ease-in-out;
-      }
 
-      details.wreper[open] p {
-        /* transform: translateY(0); */
-        opacity: 100%;
+      @media only screen and (min-width:568px){
+        .colom{
+          width: 100%;
+        }
       }
+      
     </style>
   </head>
   <body>
-    <section class="faq-container">
+    <section class="faq-container colom">
       <h1 class="title">FAQ</h1>
       <details class="wreper">
         <summary>apakah himakom itu ukm?</summary>
         <!-- <div class="answer-wreper hidden"> -->
-        <p>
+        <p class="answer">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
           voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
           culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
@@ -67,7 +75,7 @@
       <details class="wreper">
         <summary>apakah himakom itu ukm?</summary>
         <!-- <div class="answer-wreper hidden"> -->
-        <p>
+        <p class="answer">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
           voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
           culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
@@ -77,7 +85,7 @@
       <details class="wreper">
         <summary>apakah himakom itu ukm?</summary>
         <!-- <div class="answer-wreper hidden"> -->
-        <p>
+        <p class="answer">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
           voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
           culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
@@ -87,7 +95,7 @@
       <details class="wreper">
         <summary>apakah himakom itu ukm?</summary>
         <!-- <div class="answer-wreper hidden"> -->
-        <p>
+        <p class="answer">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
           voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
           culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
@@ -96,6 +104,68 @@
       </details>
     </section>
     <script>
+
+      const allDetails = document.querySelectorAll('details')
+      allDetails.forEach(details => {
+        const summary = details.querySelector('summary')
+        const answer = details.querySelector('.answer')
+
+        summary.addEventListener('click', function() {
+          if(details.hasAttribute('open')){
+            return
+          }
+          allDetails.forEach(openDetails => {
+            if (openDetails !== details && openDetails.hasAttribute('open')) {
+              openDetails.removeAttribute('open')
+            }
+          })
+          setTimeout(() =>{
+            answer.style.opencity = 1
+          }, 0)
+        })
+      })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       // const details = document.querySelectorAll('details')
 
       //     details.forEach(detail =>{
