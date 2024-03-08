@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROJECT</title>
+    <style>
+      /* FIRST */
+      .conteiner {
+        width: 100%;
+        color: white;
+        background-color: #c70808;
+      }
+      /* navigasi */
+      .navigasi {
+        height: 100%;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        align-items: center;
+      }
+
+      .navigasi * {
+        text-decoration: none;
+        list-style: none;
+        color: white;
+      }
+      /* logo dan nama */
+      .logo {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 30px;
+      }
+      .logo1 {
+        width: 50px;
+        border-radius: 100%;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        gap: 8px;
+        color: #000;
+      }
+
+      .navbar li a:hover {
+        color: #000;
+        transition: all 0.2s ease-in-out;
+      }
+
+      #divisi-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: absolute;
+        background-color: white;
+        border-radius: 5px;
+        border: solid 1px black;
+      }
+
+      #divisi-nav a {
+        color: #c70808;
+        padding: 4px 8px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      #divisi-nav a:hover {
+        color: #000;
+        background-color: grey;
+      }
+
+      .login{
+        background-color: brown;
+        border-radius: 20px;
+        padding: 8px 16px;
+
+        
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- first -->
+    <nav class="conteiner">
+      <div class="navigasi">
+        <a class="logo" href="#">
+          <img src="../src/images/logo.jpg" alt="" class="logo1" />
+          <span class="title">Himakom</span>
+        </a>
+        <ul class="navbar">
+          <li class="hover-nav"><a href="#home">Home</a></li>
+          <li class="hover-nav">
+            <a href="#About">About</a>
+          </li>
+          <li class="hover-nav">
+            <a href="#divisi">Divisi</a>
+            <!-- divisi -->
+            <div id="divisi-nav" class="hidden">
+              <a href="#home">Desain</a>
+              <a href="#About">Program</a>
+              <a href="#divisi">Jaringan</a>
+            </div>
+          </li>
+          <li class="hover-nav"><a href="#">Galeri</a></li>
+          <li class="hover-nav"><a href="#" class="login">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+    <script>
+      const divisiLink = document.querySelectorAll(".hover-nav")[2];
+
+      divisiLink.onclick = (event) => {
+        event.preventDefault();
+        document.getElementById("divisi-nav").classList.toggle("hidden");
+      };
+
+      document.body.onclick = (event) => {
+        if (
+          !divisiLink.contains(event.target)
+        ) {
+          document.getElementById("divisi-nav").classList.add("hidden");
+        }
+      };
+    </script>
+  </body>
+</html>
