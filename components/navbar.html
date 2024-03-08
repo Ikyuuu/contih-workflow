@@ -5,76 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PROJECT</title>
     <style>
-
-     
       /* FIRST */
       .conteiner {
         width: 100%;
-        background-color: #eaeaea;
+        color: white;
+        background-color: #c70808;
       }
       /* navigasi */
       .navigasi {
-        /* position: fixed; */
-        padding: 12px;
+        height: 100%;
+        padding: 16px;
         display: flex;
         justify-content: space-between;
         font-size: 20px;
-        font-family: Arial, Helvetica, sans-serif;
         align-items: center;
-        color: black;
-        background-color: #c70808;
+      }
+
+      .navigasi * {
+        text-decoration: none;
+        list-style: none;
+        color: white;
       }
       /* logo dan nama */
       .logo {
+        height: 100%;
         display: flex;
-        font-weight: 700;
         align-items: center;
         gap: 8px;
-        background-color: rgba(245, 18, 30, 0.5);
-        filter: drop-shadow(3px 3px 3px 3px rgba(52, 45, 45, 0.5));
-        padding: 4px;
-        font-variant: small-caps;
         font-size: 30px;
       }
       .logo1 {
         width: 50px;
         border-radius: 100%;
-        cursor: pointer;
       }
 
       .navbar {
-        padding: 8px;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        height: 30px;
-        line-height: 30px;
-        color: white;
+        justify-content: space-evenly;
         position: relative;
-      }
-
-      .navbar li a {
-        margin: 10px;
-        text-decoration: none;
-        color: inherit;
+        gap: 4px;
+        color: #000;
       }
 
       .navbar li a:hover {
-        color: black;
-        transition: all .2s ease-in-out;
+        color: #000;
+        transition: all 0.2s ease-in-out;
       }
 
       #divisi-nav {
+        padding: 16px;
         display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
         position: absolute;
-        gap: 4px;
-        top: 30px;
-        right: 160pxpx;
-        color: #c70808;
         background-color: white;
-        padding: 16px;
         border-radius: 5px;
+      }
+
+      #divisi-nav a {
+        color: #c70808;
+      }
+
+      #divisi-nav a:hover {
+        color: #000;
+        transition: all 0.2s ease-in-out;
       }
 
       .hidden {
@@ -84,33 +78,45 @@
   </head>
   <body>
     <!-- first -->
-    <div class="conteiner">
+    <nav class="conteiner">
       <div class="navigasi">
-        <a class="logo">
+        <a class="logo" href="#">
           <img src="../src/images/logo.jpg" alt="" class="logo1" />
           <span class="title">Himakom</span>
         </a>
         <ul class="navbar">
           <li class="hover-nav"><a href="#home">Home</a></li>
-          <li class="hover-nav"><a href="#About">About</a></li>
-          <li class="hover-nav"><a href="#divisi">Divisi</a></li>
+          <li class="hover-nav">
+            <a href="#About">About</a>
+          </li>
+          <li class="hover-nav">
+            <a href="#divisi">Divisi</a>
+            <!-- divisi -->
+            <div id="divisi-nav" class="hidden">
+              <a href="#home">Desain</a>
+              <a href="#About">Program</a>
+              <a href="#divisi">Jaringan</a>
+            </div>
+          </li>
           <li class="hover-nav"><a href="#">Service</a></li>
           <li class="hover-nav"><a href="#" class="login">Career</a></li>
-          <!-- divisi -->
-          <div id="divisi-nav" class="hidden">
-            <a href="#home">Home</a>
-            <a href="#About">About</a>
-            <a href="#divisi">Divisi</a>
-          </div>
         </ul>
       </div>
-    </div>
+    </nav>
     <script>
       const divisiLink = document.querySelectorAll(".hover-nav")[2];
 
       divisiLink.onclick = (event) => {
         event.preventDefault();
         document.getElementById("divisi-nav").classList.toggle("hidden");
+      };
+
+      document.body.onclick = (event) => {
+        if (
+          !divisiLink.contains(event.target)
+        ) {
+          document.getElementById("divisi-nav").classList.add("hidden");
+        }
       };
     </script>
   </body>
