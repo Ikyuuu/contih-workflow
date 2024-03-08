@@ -13,7 +13,6 @@
         background-color: rgb(106, 106, 197);
         color: rgb(0, 0, 0);
         padding: 10px;
-    
       }
 
       summary {
@@ -65,7 +64,7 @@
       <details class="wreper">
         <summary>apakah himakom itu ukm?</summary>
         <!-- <div class="answer-wreper hidden"> -->
-        <p class="answer">
+        <p class="answer" id="elemenSaya">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
           voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
           culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
@@ -75,7 +74,7 @@
       <details class="wreper">
         <summary>apakah himakom itu ukm?</summary>
         <!-- <div class="answer-wreper hidden"> -->
-        <p class="answer">
+        <p class="answer" id="elemenSaya">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
           voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
           culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
@@ -85,7 +84,7 @@
       <details class="wreper">
         <summary>apakah himakom itu ukm?</summary>
         <!-- <div class="answer-wreper hidden"> -->
-        <p class="answer">
+        <p class="answer" id="elemenSaya">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
           voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
           culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
@@ -95,7 +94,7 @@
       <details class="wreper">
         <summary>apakah himakom itu ukm?</summary>
         <!-- <div class="answer-wreper hidden"> -->
-        <p class="answer">
+        <p class="answer" id="elemenSaya">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
           voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
           culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
@@ -124,6 +123,17 @@
           }, 0)
         })
       })
+
+      const untukAnimasi = document.getElementById('elemenSaya')
+
+      function transisiPenundaan(penundaan) {
+        setTimeout(() => {
+          untukAnimasi.style.opacity = 1
+        }, penundaan)
+      }
+      transisiPenundaan(1000)
+
+
 
 
 
