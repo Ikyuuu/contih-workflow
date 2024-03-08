@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <style>
+      .faq-container .title {
+        text-align: center;
+      }
+
+      .wreper {
+        background-color: rgb(106, 106, 197);
+        color: rgb(0, 0, 0);
+        padding: 10px;
+      }
+
+      summary {
+        cursor: pointer;
+      }
+
+      details[open] summary {
+        opacity: 1;
+        font-weight: bold;
+        max-height: 9999px;
+      }
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .answer {
+        opacity: 0;
+        transition: opencity 0.5s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      
+      details[open] .answer {
+        opacity: 1;
+        max-height: 9999px;
+        
+      }
+      .faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      @media only screen and (min-width:568px){
+        .colom{
+          width: 100%;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <section class="faq-container colom">
+      <h1 class="title">FAQ</h1>
+      <details class="wreper">
+        <summary>apakah himakom itu ukm?</summary>
+        <!-- <div class="answer-wreper hidden"> -->
+        <p class="answer" id="elemenSaya">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
+          voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
+          culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
+          Illo, alias.
+        </p>
+      </details>
+      <details class="wreper">
+        <summary>apakah himakom itu ukm?</summary>
+        <!-- <div class="answer-wreper hidden"> -->
+        <p class="answer" id="elemenSaya">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
+          voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
+          culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
+          Illo, alias.
+        </p>
+      </details>
+      <details class="wreper">
+        <summary>apakah himakom itu ukm?</summary>
+        <!-- <div class="answer-wreper hidden"> -->
+        <p class="answer" id="elemenSaya">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
+          voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
+          culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
+          Illo, alias.
+        </p>
+      </details>
+      <details class="wreper">
+        <summary>apakah himakom itu ukm?</summary>
+        <!-- <div class="answer-wreper hidden"> -->
+        <p class="answer" id="elemenSaya">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
+          voluptate at enim, sapiente quam ad magni blanditiis iure consectetur
+          culpa minima, recusandae odio deleniti adipisci, aliquid placeat?
+          Illo, alias.
+        </p>
+      </details>
+    </section>
+    <script>
+
+      const allDetails = document.querySelectorAll('details')
+      allDetails.forEach(details => {
+        const summary = details.querySelector('summary')
+        const answer = details.querySelector('.answer')
+
+        summary.addEventListener('click', function() {
+          if(details.hasAttribute('open')){
+            return
+          }
+          allDetails.forEach(openDetails => {
+            if (openDetails !== details && openDetails.hasAttribute('open')) {
+              openDetails.removeAttribute('open')
+            }
+          })
+          setTimeout(() =>{
+            answer.style.opencity = 1
+          }, 0)
+        })
+      })
+
+      const untukAnimasi = document.getElementById('elemenSaya')
+
+      function transisiPenundaan(penundaan) {
+        setTimeout(() => {
+          untukAnimasi.style.opacity = 1
+        }, penundaan)
+      }
+      transisiPenundaan(1000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // const details = document.querySelectorAll('details')
+
+      //     details.forEach(detail =>{
+      //     detail.addEventListener('toggle', () => {
+      //         if (detail.hasAttribute('open')) {
+      //             detail.querySelector('summary').textContent += ' ';
+      //         }else {
+      //             detail.querySelector('summary').textContent = detail.querySelector ('summary').textContent.replace('',' ')
+      //         }
+      //     })
+      // })
+
+      // const click =
+      // const wrapper = document.getElementById("#btn")
+      // const answerWreper = document.getElementsByClassName(".answer-wreper")
+
+      // wrapper.onClick = function(event){
+      //     event.preventDefault()
+      //     answerWreper.classList.toggle("hidden")
+      // }
+      // console.log(answerWreper)
+    </script>
+  </body>
+</html>
